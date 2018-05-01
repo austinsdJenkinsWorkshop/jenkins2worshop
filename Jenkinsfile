@@ -1,13 +1,13 @@
 pipeline {
   agent {
-    label 'jdk9'
+    label 'jdk8'
   }
   stages {
     stage('Say Hello') {
       parallel {
         stage('Say Hello') {
           steps {
-            echo 'Hello World!'
+            echo 'Hello World!'+$MY_NAME
           }
         }
         stage('javaVersion') {
@@ -17,5 +17,8 @@ pipeline {
         }
       }
     }
+  }
+  environment {
+    MY_NAME = 'Greg'
   }
 }
