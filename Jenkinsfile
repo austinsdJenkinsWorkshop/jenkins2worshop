@@ -11,7 +11,6 @@ pipeline {
         echo "${TEST_USER_PSW}"
       }
     }
-    
     stage('Testing') {
       failFast true
       parallel {
